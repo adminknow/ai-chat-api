@@ -28,9 +28,9 @@ git push origin "${BRANCH}"
 ssh "${REMOTE_HOST}" << EOF
 set -e
 cd "${REMOTE_DIR}"
-echo "停止服务..."
-pkill -f gunicorn
-pkill -f uvicorn
+# echo "停止服务..."
+# pkill -f gunicorn
+# pkill -f uvicorn
 echo "服务器正在拉取最新代码..."
 git pull origin "${BRANCH}"
 
