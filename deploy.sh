@@ -28,7 +28,9 @@ git push origin "${BRANCH}"
 ssh "${REMOTE_HOST}" << EOF
 set -e
 cd "${REMOTE_DIR}"
-
+echo "停止服务..."
+pkill -f gunicorn
+pkill -f uvicorn
 echo "服务器正在拉取最新代码..."
 git pull origin "${BRANCH}"
 
@@ -48,9 +50,7 @@ git pull origin "${BRANCH}"
 
 # 3) gunicorn 手动（示例，按实际命令改）
 
-echo "停止服务..."
-pkill -f gunicorn
-pkill -f uvicorn
+
 
 echo "启动服务..."
 nohup gunicorn main:app --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8002 > app.log 2>&1 &
