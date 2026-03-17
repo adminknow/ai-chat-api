@@ -3,7 +3,7 @@ set -euo pipefail
 
 # ===== 可配置项 =====
 REMOTE_HOST="root@60.205.9.246"
-REMOTE_DIR="/root/var/www/chatmanage/ai-chat-api"
+REMOTE_DIR="/root/root/var/www/chatmanage/ai-chat-api"
 BRANCH="main"
 COMMIT_MSG="${1:-deploy: update}"
 
