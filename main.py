@@ -41,8 +41,8 @@ def verify_password(authorization: str = Header(None)):
 @app.post("/chat")
 def chat(request: dict, authorization: str = Header(None)):
     # 1. 验证密码
-    if authorization != API_PASSWORD:
-        return {"error": "密码错误"}
+    # if authorization != API_PASSWORD:
+    #     return {"error": "密码错误"}
 
     # 1. 获取用户的新消息
     user_message = request.get("message", "")
