@@ -9,7 +9,7 @@ import anthropic
 load_dotenv()
 
 # Railway 会自动提供 PORT 环境变量
-PORT = int(os.getenv("PORT", 8000))
+PORT = int(os.getenv("PORT", 8002))
 
 API_KEY = os.getenv("API_KEY")
 BASE_URL = os.getenv("BASE_URL")
