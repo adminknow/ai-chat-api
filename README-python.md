@@ -5,3 +5,9 @@
 关键标识：激活后终端前缀出现 (venv)，说明已进入虚拟环境，此时 pip 操作仅对该环境生效。
 
 requirements.txt 是依赖文件
+
+找到问题了！Gunicorn不能直接运行FastAPI，需要用uvicorn worker。
+
+执行部署脚本
+chmod +x deploy.sh
+./deploy.sh
