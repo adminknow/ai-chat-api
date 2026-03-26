@@ -39,11 +39,7 @@ def verify_password(authorization: str = Header(None)):
 
 
 @app.post("/chat")
-def chat(request: dict, authorization: str = Header(None)):
-    # 1. 验证密码
-    # if authorization != API_PASSWORD:
-    #     return {"error": "密码错误"}
-
+async def chat(request: dict, authorization: str = Header(None)):
     # 1. 获取用户的新消息
     user_message = request.get("message", "")
 
@@ -52,28 +48,23 @@ def chat(request: dict, authorization: str = Header(None)):
         {"role": "user", "content": [{"type": "text", "text": user_message}]}
     )
 
-    # 3. 调用AI（把历史消息一起发送）
-    response = client.messages.create(
+    # 3. 流式调用AI
+    with client.messages.stream(
         model="MiniMax-M2.5",
         max_tokens=1000,
-        system="你是一个有帮助的助手",
-        messages=chat_history,  # 关键：传入历史！
-    )
+        system="你是一个聊天机器人",
+        messages=chat_history,
+    ) as stream:
+        full_reply = ""
+        # 流式返回数据
+        for text in stream.text_stream:
+            full_reply += text
+            yield {"reply": text}  # 每次返回一个片段
 
-    # 4. 提取AI回复
-    reply = ""
-    for block in response.content:
-        if block.type == "text":
-            reply = block.text
-            break
-
-    # 5. 把AI回复也加入历史
+    # 4. 把完整回复加入历史
     chat_history.append(
-        {"role": "assistant", "content": [{"type": "text", "text": reply}]}
+        {"role": "assistant", "content": [{"type": "text", "text": full_reply}]}
     )
-
-    # 6. 返回
-    return {"reply": reply}
 
 
 @app.post("/clear")

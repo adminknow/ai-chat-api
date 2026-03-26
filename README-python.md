@@ -13,3 +13,10 @@ chmod +x deploy.sh
 ./deploy.sh
 
 nohup python3 main.py > output.log 2>&1 & 线上一直运行
+
+lsof -i:8002查询端口
+
+好，用systemd管理服务更专业，开机自动启动！后续再学习
+
+
+git:&lt;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&gt;
