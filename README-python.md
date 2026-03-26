@@ -11,3 +11,7 @@ requirements.txt 是依赖文件
 执行部署脚本
 chmod +x deploy.sh
 ./deploy.sh
+
+lsof -i:8002查询端口
+
+好，用systemd管理服务更专业，开机自动启动！后续再学习
