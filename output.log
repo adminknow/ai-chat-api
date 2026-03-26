@@ -1,0 +1,30 @@
+nohup: ignoring input
+INFO:     Started server process [5616]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+INFO:     140.207.95.84:36954 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:36955 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:21369 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:21370 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:21371 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:36956 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:36957 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:21373 - "POST /chat HTTP/1.1" 200 OK
+INFO:     140.207.95.84:21374 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.195.93:9714 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.195.93:9728 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.195.93:47224 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     140.207.95.84:36959 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.51:33584 - "GET / HTTP/1.1" 200 OK
+INFO:     183.134.59.133:43314 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     183.134.59.133:43315 - "GET / HTTP/1.1" 200 OK
+INFO:     183.134.59.133:43316 - "GET / HTTP/1.1" 200 OK
+INFO:     183.134.59.133:43317 - "GET / HTTP/1.1" 200 OK
+INFO:     85.217.140.8:56412 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.51:54148 - "GET / HTTP/1.1" 200 OK
+INFO:     101.87.154.218:26330 - "POST /chat HTTP/1.1" 200 OK
+INFO:     101.87.154.218:26354 - "POST /chat HTTP/1.1" 200 OK

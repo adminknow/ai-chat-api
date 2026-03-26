@@ -11,3 +11,5 @@ requirements.txt 是依赖文件
 执行部署脚本
 chmod +x deploy.sh
 ./deploy.sh
+
+nohup python3 main.py > output.log 2>&1 & 线上一直运行
